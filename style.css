@@ -1,0 +1,343 @@
+html
+{
+    height: 100%;
+    width: 100%;
+}
+
+/* I import my custom font first */
+@font-face 
+{
+    font-family: 'Pushster';
+    src: url('Pushster-Regular.ttf');
+}
+
+/* BODY NOW */
+/* Header section and his button */
+/*  *//*  *//*  *//*  *//*  *//*  */
+body
+{
+    height: 100%;
+    width: 100%;
+}
+header
+{
+    position:fixed;
+    /* ponerle un valor de top o se chanflea */
+    top: 0;
+    background-color:white;
+    width:100vw;
+    height: 5vh;
+    padding-bottom: 1%;
+}
+
+header button
+{
+    display: inline-block;
+    float:left;
+    margin: 0.5% 1% 5% 1%;
+    background: linear-gradient(rgb(118, 224, 209),rgb(106, 59, 224));
+    border-color: cadetblue;
+    width:2vw;
+    height: 2vh;
+
+}
+header button img
+{
+    width: 100%;
+    height: 100%;
+}
+
+header h1
+{ 
+    display: inline;
+    text-align: center;
+    margin-left: 1%;
+    font-size: 90%;
+    font-family: Pushster, Georgia, 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-variant: normal;
+}
+
+/* STILL in the BODY */
+/*  *//*  *//*  *//*  *//*  *//*  *//*  */
+/* Section for content, images */
+/*  *//*  *//*  *//*  *//*  *//*  *//*  */
+
+#contenido1
+{
+    display:block;
+    width:100vw;
+    height: 100%;
+    margin: 0% 0.5% 0% 0.5%;
+    /* Pongo un z-index por las moscas, igual está en block así que no hace nada */
+    /* El tema es que arriba irá la navbar */
+    z-index: 0;
+}
+
+#contenido2
+{
+    display:none;
+    width:100vw;
+    height: 100%;
+    margin: 0% 0.5% 0% 0.5%;
+    /* Pongo un z-index por las moscas, igual está en block así que no hace nada */
+    /* El tema es que arriba irá la navbar */
+    z-index: 0;
+}
+
+body #contenido1 img
+{
+    display:inline-block;
+    width: 47vw;
+}
+
+body #contenido2 img
+{
+    display:inline-block;
+    width: 47vw;
+}
+
+/* STILL in the BODY */
+/*  *//*  *//*  *//*  *//*  *//*  *//*  */
+/* Now Everything concerning the navbar! */
+/*  *//*  *//*  *//*  *//*  *//*  *//*  */
+
+
+/* First the button actions and transitions of Navbar */
+.navdefault
+{
+    visibility: hidden;
+    position: fixed;
+    top:5.4%;
+    float:left;
+    width: 0%;
+    height: 92.5vh;
+    border-radius: 2%;
+    background: magenta;
+}
+
+.navbar_opens
+{
+    /* Muy importante el position fixed para superponerse
+    /* OJO las transiciones funcionan DIFERENTE al usar JS */
+    /* TODO el código de transición va en el estilo "target", SUMADO a una línea */
+    /* llamado "transition" que básicamente es la duración (en vez de transition-duration */
+    /* por qué no sé pero bueno */
+    transition: 0.5s;
+    transition-property: all;
+    transition-timing-function: ease-in;
+    visibility: show;
+    position: fixed;
+    top: 5.4%;
+    float:left;
+    width: 20%;
+    height: 92.5vh;
+    border-radius: 2%;
+    background: linear-gradient(rgb(118, 224, 209),rgb(106, 59, 224));
+    /* Y el z-index indicar la altura que queremos */
+    z-index: 1    
+}
+
+.navbar_closes
+{
+    transition: 0.5s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    visibility: hidden;
+    position: fixed;
+    top:5.4%;
+    float:left;
+    width: 0%;
+    height: 92.5vh;
+    border-radius: 2%;
+    background: linear-gradient(rgb(118, 224, 209),rgb(106, 59, 224));
+    z-index: 1;   
+}
+
+/*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+/* Formatting the icons inside the navbar, which an orderes list */
+/*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+/*  *//*  *//*  *//*  *//*  *//*  *//*  */
+
+#previews
+{
+    display:block;
+    float:left;
+    margin: 10% 0% 10% 0%;
+    padding-right: 10%;
+}
+
+#previews button
+{
+    background-color: rgba(0,0,0,0);
+    width: 100%;
+    height: 100%;
+    border-style: none;    
+}
+
+#previews button img
+{
+    width: 100%;
+    height: 100%;
+    border-style: outset;
+    border-color: cadetblue;
+}
+
+.figcaption_default
+{
+    font-size: 0.8rem;
+    font-family: Pushster, Georgia, 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-variant: normal;
+    margin-left: 0;
+    padding-left: 10%;
+}
+
+.figcaption_opens
+{
+    transition: 0.5s;
+    transition-property: all;
+    transition-property: font-size;
+    transition-timing-function: ease-in;
+    font-size: 100pt;
+    font-family: Pushster, Georgia, 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-variant: normal;
+    margin-left: 0;
+    padding-left: 10%;
+}
+
+.figcaption_closes
+{
+    transition: 0.5s;
+    transition-property: all;
+    transition-timing-function: ease-in;
+    font-size: 0rem;
+    font-family: Pushster, Georgia, 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-variant: normal;
+    margin-left: 0;
+    padding-left: 10%;
+}
+
+/*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+/* MEDIA QUERIES FINALLY */
+/*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+/*  *//*  *//*  *//*  *//*  *//*  *//*  */
+
+/* ESTE MEDIA QUERY NO QUIERE FUNCIONAR NO ANDA PARA NADA NO SE POR QUÉ */
+
+@media screen and (min-width:850px) and (max-width: 100000px)
+{
+    header h1
+    {
+        font-size:220%;
+        margin-left:20%;
+    }
+    header button
+    {
+        margin-left:0.65% ;
+        height: 100%;
+        width:5vw;
+    }
+
+    .navdefault, .navbar_opens,.navbar_closes
+    {
+        top: 6.7vh;
+        height: 90vh;
+    }
+
+    #previews
+    {
+        width:10vw;
+        height:30vh;
+        margin-left:20%;
+    }
+
+    /* Finally we make imgs a little bigger so we put 4 on the same row */
+    body #contenido1 img
+    {
+        display:inline-block;
+        width: 24vw;
+    }
+
+    body #contenido2 img
+    {
+        display:inline-block;
+        width: 24vw;
+    }
+
+}
+
+@media screen and (min-width:480px) and (max-width: 849px)
+{
+    header h1
+    {
+        font-size:200%;
+        margin-left:15%;
+    }
+    header button
+    {
+        height: 100%;
+        width:10vw;
+        margin-left: 0.65%;
+    }
+    #previews
+    {
+        width:65%;
+        height:25%;
+        margin-left:12%;
+    }
+    .navdefault, .navbar_opens,.navbar_closes
+    {
+        top: 5.7vh;
+        height: 91vh;
+    }
+
+    body #contenido1 img
+    {
+        display:inline-block;
+        width: 32vw;
+    }
+
+    body #contenido2 img
+    {
+        display:inline-block;
+        width: 32vw;
+    }
+
+}
+
+
+@media screen and (min-width:240px) and (max-width: 479px)
+{
+    header
+    {
+        padding-bottom: 1%;
+    }
+    header h1
+    {
+        font-size:10%px;
+        margin-left:20%;
+    }
+    header button
+    {
+        width:2em;
+        height:2em;
+    }
+    #previews
+    {
+        width:50%;
+        height:10%;
+        margin-left:15%;
+    }
+
+    .navdefault, .navbar_opens,.navbar_closes
+    {
+        top: 5.3vh;
+        height: 91vh;
+    }
+
+}
+
+
